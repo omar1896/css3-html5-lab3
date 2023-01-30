@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="email.css">
+</head>
+
+<body>
+    
+    <h1 id="task">validation</h1>
+
+    <div class="task1">
+        <form  >
+
+            <h2>Change Email Address</h2>
+            <div class="user-name">
+                <input type="text" id="name" placeholder="UserName" pattern="[A-Za-z]{4}" autocomplete=on;>
+                <p>The Required User Name May Only be Series of 4 Alphabetical Characters</p>
+            </div>
+            <div class="email">
+                <input type="email" id="email" placeholder="Email" autocomplete="on">
+                <p>The Required Email Address may not include any Special Characters than the "@" Sign</p> <br> <br>
+                <button id="sub">submit</button>
+        </form>
+        <script>
+            var btn = document.getElementById("sub")
+            console.log(btn);
+            btn.addEventListener('click', function () {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                console.log(name, email);
+                localStorage.setItem("username", name);
+                localStorage.setItem("useremail", email);
+                console.log(localStorage.getItem("username"));
+                console.log(localStorage.getItem("useremail"));
+                document.write(JSON.stringify(localStorage.getItem("username")))
+                document.write(JSON.stringify(localStorage.getItem("useremail")))
+            });
+        </script>
+
+</body>
+
+</html>

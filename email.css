@@ -1,0 +1,43 @@
+
+.task1 h2 {
+    margin-bottom: 20px;
+}
+
+.task1 .user-name {
+    margin-bottom: 20px;
+
+}
+
+.task1 .email {
+    margin-bottom: 20px;
+}
+
+.task1 input {
+
+    outline: none;
+    height: 30px;
+}
+
+.task1 input:invalid {
+    border: 1px solid red;
+    border-radius: 5px;
+
+}
+
+
+
+.user-name input:valid+p {
+    display: none;
+}
+
+.email input:valid+p {
+    display: none;
+}
+
+.task1 button {
+
+    width: 80px;
+    height: 40px;
+
+
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <STYle>
+       body{
+        background-color: rgb(182, 202, 194);
+       }
+    </STYle>
+</head>
+<body>
+
+    
+<button id="sum" style="width: 200px; height: 20px;">calcylate sum </button> <br> <br> <br>
+<button id="bg" style="width:200px; height: 20px; " >change background</button>
+
+<script>
+ var workerapi = new Worker("workerapi.js") 
+    var sum = document.getElementById("sum");
+    var bg = document.getElementById("bg");
+    console.log(sum,bg)
+
+    sum.onclick = function(){
+      
+       workerapi.postMessage(""); 
+    }
+    workerapi.onmessage = function(message){
+      console.log(message);
+      alert(message.data);
+    }
+
+    bg.onclick = function(){
+      if(document.body.style.background !== "blue"){
+          document.body.style.background = "blue";
+      }else{
+          document.body.style.background = "red";
+      }
+    }
+    </script>
+</body>
+</html>
